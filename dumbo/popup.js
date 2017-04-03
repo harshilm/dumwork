@@ -3,7 +3,7 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var code = 'var meta = document.querySelector("meta[property=\'hcp:version\']");' + 'if (meta) meta = meta.getAttribute("content");' +
+  var code = 'var meta = document.querySelector("meta[property=\'hcp:version\']");var old_meta = document.querySelector("meta[name=\'hcp-version\']");' + 'if (meta) meta = meta.getAttribute("content");if (old_meta) meta = old_meta.getAttribute("content");' +
            '({' +
            '    title: document.title,' +
            '    version: meta || ""' +
